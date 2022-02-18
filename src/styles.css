@@ -1,0 +1,9 @@
+/* Add application styles & imports to this file! */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+body {
+  padding: 10px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
