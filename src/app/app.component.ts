@@ -104,6 +104,22 @@ export class AppComponent {
         placeholder: 'Enter date',
         required: true,
       }     
-    }
+    },
+    {
+      key: 'time',
+      type: 'time',
+      templateOptions: {
+        label: 'Time',
+        required: true,
+      }     
+    },
+    {
+      key: 'datetime',
+      type: 'datetime',
+      templateOptions: {
+        label: 'Date Time',
+        required: true,
+      }     
+    },
   ];
 }
