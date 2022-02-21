@@ -85,10 +85,10 @@ export class AppComponent {
     },
 
     {
-      key: 'select_multi',
-      type: 'select',
+      key: 'Slider',
+      type: 'slider',
       templateOptions: {
-        label: 'Select Multiple',
+        label: 'Select Range',
         placeholder: 'Placeholder',
         description: 'Description',
         required: true,
