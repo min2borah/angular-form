@@ -1,26 +1,46 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { AppComponent } from './app.component';
 import { FormlyFieldSlider } from './components/formly-field-slider/formly-field-slider.component';
 import { DatePickerDirective } from './components/date-picker/date-picker.directive';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
+import { FieldsetWrapper } from './wrappers/fieldset-wrapper/fieldset-wrapper.component';
+import { LabelWrapper } from './wrappers/label-wrapper/label-wrapper.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [AppComponent, FormlyFieldSlider, DatePickerComponent, DatePickerDirective ],
+  declarations: [AppComponent, FormlyFieldSlider, DatePickerComponent, DatePickerDirective, FieldsetWrapper, LabelWrapper ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
     CommonModule,
     FormlyBootstrapModule,
     FormlyModule.forRoot({
-      types: [{ name: 'slider', component: FormlyFieldSlider }],
+      types: [
+        { 
+          name: 'slider', 
+          component: FormlyFieldSlider 
+        },
+        { 
+          name: 'date',
+          component: DatePickerComponent,
+          wrappers: ['label', 'fieldset'],
+        },
+      ],
+      wrappers: [
+        { name: 'label', component: LabelWrapper },
+        { name: 'fieldset', component: FieldsetWrapper }
+      ],
       validationMessages: [
         { name: 'required', message: 'This field is required' },
       ],
     }),
+    NgbModule
   ],
   bootstrap: [AppComponent],
 })
