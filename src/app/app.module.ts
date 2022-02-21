@@ -6,9 +6,10 @@ import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { AppComponent } from './app.component';
 import { FormlyFieldSlider } from './components/formly-field-slider/formly-field-slider.component';
+import { DatePickerDirective } from './components/date-picker/date-picker.directive';
 
 @NgModule({
-  declarations: [AppComponent, FormlyFieldSlider],
+  declarations: [AppComponent, FormlyFieldSlider, DatePickerComponent, DatePickerDirective ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
