@@ -113,13 +113,67 @@ export class AppComponent {
         required: true,
       }     
     },
+    // {
+    //   key: 'datetime',
+    //   type: 'datetime',
+    //   templateOptions: {
+    //     label: 'Date Time',
+    //     required: true,
+    //   }     
+    // },
     {
-      key: 'datetime',
-      type: 'datetime',
-      templateOptions: {
-        label: 'Date Time',
-        required: true,
-      }     
-    },
+      type: 'tabs',
+      fieldGroup: [
+        {
+          templateOptions: { label: 'Personal data' },
+          fieldGroup: [
+            {
+              key: 'firstname',
+              type: 'input',
+              templateOptions: {
+                label: 'First name',
+                required: true,
+              },
+            },
+            {
+              key: 'age',
+              type: 'input',
+              templateOptions: {
+                type: 'number',
+                label: 'Age',
+                required: true,
+              },
+            },
+          ],
+        },
+        {
+          templateOptions: { label: 'Destination' },
+          fieldGroup: [
+            {
+              key: 'country',
+              type: 'input',
+              templateOptions: {
+                label: 'Country',
+                required: true,
+              },
+            },
+          ],
+        },
+        {
+          templateOptions: { label: 'Day of the trip' },
+          fieldGroup: [
+            {
+              key: 'day',
+              type: 'input',
+              templateOptions: {
+                type: 'date',
+                label: 'Day of the trip',
+                required: true,
+              },
+            },
+          ],
+        },
+      ],
+    }
   ];
 }

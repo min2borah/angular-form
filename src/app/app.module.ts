@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormlyModule } from '@ngx-formly/core';
@@ -14,16 +15,31 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateTimePickerComponent } from './components/date-time-picker/date-time-picker.component';
 import { DateTimeComponent} from './components/date-time-picker/date-time.component';
 import { TimePickerComponent } from './components/time-picker/time-picker.component';
+import { FormlyFieldTabs } from './components/tabs.type';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
-  declarations: [AppComponent, FormlyFieldSlider, DatePickerComponent, DatePickerDirective, FieldsetWrapper, LabelWrapper, DateTimePickerComponent, TimePickerComponent , DateTimeComponent],
+  declarations: [
+    AppComponent, 
+    FormlyFieldSlider, 
+    DatePickerComponent, 
+    DatePickerDirective, 
+    FieldsetWrapper, 
+    LabelWrapper, 
+    DateTimePickerComponent, 
+    TimePickerComponent , 
+    DateTimeComponent, 
+    FormlyFieldTabs
+  ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
     FormlyBootstrapModule,
+    MatTabsModule,
     FormlyModule.forRoot({
       types: [
         { 
@@ -44,6 +60,10 @@ import { TimePickerComponent } from './components/time-picker/time-picker.compon
           name: 'datetime',
           component: DateTimeComponent,
           wrappers: ['label', 'fieldset'],
+        },
+        { 
+          name: 'tabs', 
+          component: FormlyFieldTabs 
         },
       ],
       wrappers: [
